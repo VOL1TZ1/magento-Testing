@@ -1,3 +1,5 @@
+package search;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,7 +11,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.List;
 
-public class buyingClothes extends Hook {
+public class ProductSearch extends Hook {
 
     @Test(priority = 1)
     public void login() {
@@ -70,10 +72,9 @@ public class buyingClothes extends Hook {
         WebElement plusButton = wait.until(ExpectedConditions.elementToBeClickable(Locators.PlusButton));
         plusButton.click();
 
-        WebElement counter =  wait.until(ExpectedConditions.elementToBeClickable(Locators.CheckoutQuantityCounter));
+        WebElement counter = wait.until(ExpectedConditions.elementToBeClickable(Locators.CheckoutQuantityCounter));
         //Thread.sleep(Duration.ofSeconds(3));
         Assert.assertEquals(counter.getAttribute("size"), "2");
-
 
 
     }
